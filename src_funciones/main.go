@@ -1,5 +1,7 @@
 package main
 
+//Julian Cardenas
+//03-12-2021
 import "fmt"
 
 func normalFunction(message string) {
