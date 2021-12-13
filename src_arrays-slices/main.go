@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+//Julian Cardenas Peñuela
+//12-12-2021
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -34,5 +39,42 @@ func main() {
 	//Append nueva lista . unir
 	newSlice := []int{8, 9, 10}
 	slice = append(slice, newSlice...)
+	fmt.Println(slice)
+	slice = append(slice, 111)
+	fmt.Println(slice)
 
+	//-----------------------------------------
+	//Recorrido  de slice con range
+
+	fmt.Println("\n--Recorrido de slice con range--")
+	slice2 := []string{"hola", "que", "hace"}
+
+	for i, valor := range slice2 {
+		fmt.Println(i, valor)
+	}
+
+	//Ejercio 1
+	fmt.Println("\nEjercicio Palindromo")
+	slicePalindromo := []string{"carro", "ojO", "avion", "Oso", "ama"}
+
+	for i := range slicePalindromo {
+		convMinuscula := strings.ToLower(slicePalindromo[i])
+		esPalindromo(convMinuscula)
+
+	}
+
+}
+
+//Funcion para saber si una palabra es palindromo o no
+func esPalindromo(text string) {
+
+	var textReverse string
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+	if textReverse == text {
+		fmt.Println(text, "Es palindromo")
+	} else {
+		fmt.Println(text, "No es palindromo")
+	}
 }
