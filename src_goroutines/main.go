@@ -1,5 +1,7 @@
 package main
 
+//Julian Cardenas Peñuela
+//15-12-2021
 import (
 	"fmt"
 	"sync"
@@ -32,7 +34,8 @@ func main() {
 	go func(text string) { // Funcion anonima
 		fmt.Println(text)
 	}("Adios")
-	// ! Funcion para que cuando llegue a esta linea espere el tiempo indicado (lo suficiente para que la Gorutine ejecute su funcion de forma concurrente)
+	// ! Funcion para que cuando llegue a esta linea espere el tiempo indicado
+	//(lo suficiente para que la Gorutine ejecute su funcion de forma concurrente)
 	time.Sleep(time.Second * 1)
 	// Nota: Para fines practicos se hace uso de la funcion Sleep(), pero en realidad NO es una buena practica, es mejor utilizar los WaitGroups
 
